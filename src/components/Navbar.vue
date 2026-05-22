@@ -64,6 +64,15 @@ nav{
     color: #ff6a13;
 }
 
+#nav-links {
+    background-color: var(--color-background);
+}
+
+a {
+    color: var(--color-label) !important;
+    background-color: var(--color-background) !important;
+}
+
 .navbar-burger span {
     font-size: 5em;
 }

@@ -25,4 +25,24 @@ a {
 main{
   flex: 1;
   display: flex;
+  background-color: var(--color-background) !important;
+}
+
+.navbar {
+  background-color: var(--color-background) !important;
+}
+
+.card {
+  color: var(--color-text);
+  background-color: var(--color-background) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+
+.card-content {
+  background-color: var(--color-background) !important;
+}
+
+.title {
+  color: var(--color-label);
 }

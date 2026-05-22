@@ -105,6 +105,10 @@ main {
     color: #ff6a13;
 }
 
+h2, h4 {
+    color: var(--color-text) !important;
+}
+
 @media screen and (max-width: 1024px) {
     .card {
         width: 100%;

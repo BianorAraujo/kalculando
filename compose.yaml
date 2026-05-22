@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: bianor-kalculando:latest
+    container_name: bianor-kalculando
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_HOST: 0.0.0.0
+    command: npm run dev -- --host 0.0.0.0
+    restart: unless-stopped
+    networks:
+      - kalculando-network
+
+networks:
+  kalculando-network:
+    driver: bridge

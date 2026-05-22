@@ -51,8 +51,18 @@
 } */
 
 :root {
-  --color-text: var(#ffffff);
-  --color-background: var(#ff6a13);
+  --color-text: #000000;
+  --color-background: #ffffff;
+  --color-background-soft: #f8f8f8;
+  --color-background-mute: #f2f2f2;
+
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-hover: rgba(0, 0, 0, 0.12);
+
+  --color-heading: #2c3e50;
+  --section-gap: 160px;
+
+  --color-label: #ff6a13;
 }
 
 
@@ -89,4 +99,19 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force light theme: always use white background and dark text */
+html, body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  caret-color: #000000 !important;
+}
+
+/* Ensure dark-mode media queries cannot change the background */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
 }

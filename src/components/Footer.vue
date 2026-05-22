@@ -30,7 +30,7 @@ footer {
     display: flex;
     align-items: center;
     width: 100%;
-    color: #ffffff;
+    color: #ffffff !important;
     background-color: #ff6a13;
 }
 
@@ -75,6 +75,10 @@ footer {
     flex-direction: column;
 }
 
+a {
+    color: #ffffff !important;
+  }
+
 @media only screen and (max-width: 600px) {
   footer {
     padding: 0px 20px;
@@ -107,6 +111,7 @@ footer {
   }
 
   a {
+    color: #ffffff !important;
     font-size: 13px;
   }
 }

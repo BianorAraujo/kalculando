@@ -11,13 +11,13 @@
                             <div>
                                 <label class="label">Altura</label>
                                 <p class="control">
-                                    <input class="input" type="email" placeholder="Metros" v-model="altura" v-mask="'#,##'" />
+                                    <input class="input" type="email" placeholder="Metros" v-model="altura" />
                                 </p>
                             </div>
                             <div>
                                 <label class="label">Peso</label>
                                 <p class="control">
-                                    <input class="input" type="text" placeholder="Quilos" v-model="peso" v-mask="'##,##'" />
+                                    <input class="input" type="text" placeholder="Quilos" v-model="peso" />
                                 </p>
                             </div>
                         </div>
@@ -40,42 +40,42 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr :class="{'is-info': (calc < 18.5 && calc > 0)}">
+                                    <tr :class="{'is-info': (calc > 0 && calc < 18.5)}">
                                         <th>Menor que 18,5</th>
                                         <td>
                                             Magreza
                                         </td>
                                         <td>O</td>
                                     </tr>
-                                    <tr :class="{'is-success': (calc < 24.9 && calc > 18.5)}">
+                                    <tr :class="{'is-success': (calc >= 18.5 && calc < 25)}">
                                         <th>Entre 18,5 e 24,9</th>
                                         <td>
                                             Normal
                                         </td>
                                         <td>O</td>
                                     </tr>
-                                    <tr :class="{'is-warning': (calc < 29.9 && calc > 25)}">
+                                    <tr :class="{'is-warning': (calc >= 25 && calc < 30)}">
                                         <th>Entre 25,0 e 29,9</th>
                                         <td>
                                             Sobrepeso
                                         </td>
                                         <td>O</td>
                                     </tr>
-                                    <tr :class="{'is-danger': (calc < 34.9 && calc > 30)}">
+                                    <tr :class="{'is-danger': (calc >= 30 && calc < 35)}">
                                         <th>Entre 30,0 e 34,9</th>
                                         <td>
                                             Obesidade
                                         </td>
                                         <td>I</td>
                                     </tr>
-                                    <tr :class="{'is-danger': (calc < 39.9 && calc > 35)}">
+                                    <tr :class="{'is-danger': (calc >= 35 && calc < 40)}">
                                         <th>Entre 35,0 e 39,9</th>
                                         <td>
                                             Obesidade Severa
                                         </td>
                                         <td>II</td>
                                     </tr>
-                                    <tr :class="{'is-danger': (calc < 500 && calc >= 40)}">
+                                    <tr :class="{'is-danger': (calc >= 40)}">
                                         <th>Maior que 40,0</th>
                                         <td>
                                             Obesidade Mórbida
@@ -216,6 +216,8 @@ main {
 .input {
     width: 150px;
     margin: 0px 10px;
+    background-color: var(--color-background) !important;
+    color: var(--color-text) !important;
 }
 
 .input:focus {
@@ -225,6 +227,7 @@ main {
 
 .label {
     margin: 0px 15px;
+    color: var(--color-text);
 }
 
 .input-control {
@@ -269,12 +272,41 @@ button {
     justify-content: center;
     flex-direction: column;
     margin-top: 40px;
+    background-color: var(--color-background) !important;
+    color: var(--color-text) !important;
+}
+
+table th,
+table td,
+table strong {
+    background-color: transparent !important;
+    color: var(--color-text) !important;
+}
+
+table tr.is-info th,
+table tr.is-info td {
+    background-color: #dff7ff !important;
+}
+
+table tr.is-success th,
+table tr.is-success td {
+    background-color: #e6f7d9 !important;
+}
+
+table tr.is-warning th,
+table tr.is-warning td {
+    background-color: #fff6d9 !important;
+}
+
+table tr.is-danger th,
+table tr.is-danger td {
+    background-color: #ffe5e5 !important;
 }
 
 .link-aboutmore {
     font-size: 12px;
     margin-top: 20px;
-    color: #ff6a13;
+    color: var(--color-label) !important;
 }
 
 .primary-color {
@@ -294,6 +326,10 @@ button {
 
 .card-text {
     padding-top: 35px;
+}
+
+h2, h4 {
+    color: var(--color-text) !important;
 }
 
 @media screen and (max-width: 1024px) {
@@ -330,5 +366,21 @@ button {
     .card-content {
         padding: 0px 20px 80px 20px;
     }
+}
+
+table tr.is-info {
+    background-color: #dff7ff;
+}
+
+table tr.is-success {
+    background-color: #e6f7d9;
+}
+
+table tr.is-warning {
+    background-color: #fff6d9;
+}
+
+table tr.is-danger {
+    background-color: #ffe5e5;
 }
 </style>

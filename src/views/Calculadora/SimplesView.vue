@@ -276,18 +276,22 @@ main {
 .input {
     width: 190px;
     margin: 0px 10px;
+    background-color: var(--color-background) !important;
+    color: var(--color-text) !important;
 }
 
 .column-value {
     font-size: 14px;
     width: auto;
     padding-left: 20px;
+    color: var(--color-text) !important;
 }
 
 .column-operator {
     font-size: 14px;
     padding-top: 0px;
     width: 40px;
+    color: var(--color-text) !important;
 }
 
 .input:focus {
@@ -352,6 +356,8 @@ button {
     justify-content: center;
     flex-direction: column;
     margin-top: 40px;
+    background-color: var(--color-background) !important;
+    color: var(--color-text) !important;
 }
 
 .link-aboutmore {
@@ -377,6 +383,14 @@ button {
 
 .card-text {
     padding-top: 35px;
+}
+
+h2, h4 {
+    color: var(--color-text) !important;
+}
+
+a {
+    background-color: var(--color-background) !important;
 }
 
 @media screen and (max-width: 1024px) {
